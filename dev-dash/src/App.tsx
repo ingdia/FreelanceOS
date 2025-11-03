@@ -1,19 +1,21 @@
-import React from 'react'
-import { BrowserRouter,Route, Routes } from 'react-router-dom'
-import Navbar from './shared/Navbar'
-import OverView from './pages/OverView'
+import "./App.css";
+import Navbar from "./shared/Navbar.js";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "./context/ThemeContext.jsx";
+
+import OverView from "./pages/OverView.js";
 
 function App() {
   return (
-    <div className='bg-gray-100 font-serif min-h-screen'>
-      <BrowserRouter>
-      <Navbar/>
-      <Routes>
-        <Route path="/" element={<OverView/>}/>
-      </Routes>
+    <ThemeProvider>
+      <BrowserRouter >
+      <Navbar />
+        <Routes>
+          <Route path="/" element={<OverView />} />
+        </Routes>
       </BrowserRouter>
-    </div>
-  )
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
