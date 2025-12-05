@@ -7,6 +7,7 @@ import { AppProvider } from "./context/AppContext";
 import OverView from "./pages/OverView.js";
 import ClientsPage from "./pages/Client.js";
 import ProjectsPage from "./pages/Project.js";
+import PaymentsPage from "./pages/Payment.js";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<OverView />} />
             <Route path="/client" element={<ClientsPage />} />
             <Route path="/project" element={<ProjectsPage />} />
+            <Route path="/payment" element={<PaymentsPage/>} />
           </Routes>
 
         </BrowserRouter>
