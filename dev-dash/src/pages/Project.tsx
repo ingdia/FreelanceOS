@@ -1,12 +1,17 @@
-import { projects } from "../data/projects";
+import { useContext } from "react";
+import { AppContext } from "../context/AppContext";
 import ProjectList from "../components/ProjectList";
 
 export default function ProjectsPage() {
-  return (
-    <div className=" bg-gray-200 dark:bg-gray-600 min-h-screen pt-4 px-20 font-serif">
-      <h1 className="text-2xl text-purple-600 dark:text-purple-300 mb-4">Projects</h1>
+  const context = useContext(AppContext);
+  if (!context) return null; 
+  const { state, dispatch } = context;
 
-      <ProjectList projects={projects} />
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-4">Projects</h1>
+
+      <ProjectList projects={state.projects} dispatch={dispatch} />
     </div>
   );
 }

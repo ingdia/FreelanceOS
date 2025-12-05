@@ -1,25 +1,41 @@
 import type { Project } from "../types/project";
+import type { Dispatch } from "react";
+import type { Action } from "../context/reducer";
 
 interface Props {
   projects: Project[];
+  dispatch: Dispatch<Action>;
 }
 
-export default function ProjectList({ projects }: Props) {
+export default function ProjectList({ projects, dispatch }: Props) {
+  const markAsPaid = (id: string) => {
+    dispatch({ type: "MARK_PROJECT_PAID", payload: { projectId: id } });
+  };
+
   return (
-    <div className="space-x-4 grid grid-cols-1 md:grid-cols-3">
-      {projects.map((project) => (
+    <div className="space-y-4">
+      {projects.map((p) => (
         <div
-          key={project.id}
-          className="p-4 border-0 rounded-md bg-white shadow-2xl"
+          key={p.id}
+          className="p-4 border rounded-md bg-white shadow-sm"
         >
-          <h3 className="font-bold text-lg">{project.title}</h3>
+          <h3 className="font-bold text-lg">{p.title}</h3>
 
-          <p>Status: {project.status}</p>
-          <p>Amount: ${project.amount}</p>
+          <p>Status: {p.status}</p>
+          <p>Amount: ${p.budget}</p>
 
-          <p className={`font-semibold mt-2 ${project.isPaid ? "text-green-600" : "text-red-600"}`}>
-            {project.isPaid ? "Paid" : "Unpaid"}
+          <p className={`font-semibold mt-2 ${p.paymentStatus === "paid" ? "text-green-600" : "text-red-600"}`}>
+            {p.paymentStatus === "paid" ? "Paid" : "Unpaid"}
           </p>
+
+          {p.paymentStatus === "unpaid" && (
+            <button
+              onClick={() => markAsPaid(p.id)}
+              className="mt-2 px-3 py-1 bg-green-600 text-white rounded"
+            >
+              Mark as Paid
+            </button>
+          )}
         </div>
       ))}
     </div>
