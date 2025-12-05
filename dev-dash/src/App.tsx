@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./context/ThemeContext.jsx";
 
 import OverView from "./pages/OverView.js";
+import ClientsPage from "./pages/Client.js";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Navbar />
         <Routes>
           <Route path="/" element={<OverView />} />
+          <Route path="/client" element={<ClientsPage />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
