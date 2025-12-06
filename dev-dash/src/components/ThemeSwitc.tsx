@@ -10,14 +10,16 @@ export default function ThemeSwitcher() {
   const { theme, toggleTheme } = context;
 
   return (
-    <div className="flex gap-2">
-      <button
-        aria-label="Toggle Dark Mode"
-        className="p-2 rounded-full transition-colors bg-gray-200 dark:bg-gray-700 px-6"
-        onClick={toggleTheme}
-      >
-        {theme === "light" ? <Moon size={20}  /> : <Sun size={20} />}
-      </button>
-    </div>
+    <button
+      aria-label="Toggle Dark Mode"
+      className="p-2 rounded-full transition-all hover:scale-110 bg-gray-100 dark:bg-gray-700 hover:bg-purple-100 dark:hover:bg-purple-900"
+      onClick={toggleTheme}
+    >
+      {theme === "light" ? (
+        <Moon size={20} className="text-gray-700 dark:text-gray-300" />
+      ) : (
+        <Sun size={20} className="text-yellow-500" />
+      )}
+    </button>
   );
 }

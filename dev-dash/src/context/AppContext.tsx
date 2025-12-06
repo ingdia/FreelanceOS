@@ -1,5 +1,6 @@
 import React, { createContext, useReducer } from "react";
 import { appReducer } from "./reducer";
+import type { Action } from "./reducer";
 import type { AppState } from "../types/appState";
 
 import { clients } from "../data/client";
@@ -15,7 +16,7 @@ const initialState: AppState = {
 // eslint-disable-next-line react-refresh/only-export-components
 export const AppContext = createContext<{
   state: AppState;
-  dispatch: React.Dispatch<any>;
+  dispatch: React.Dispatch<Action>;
 } | null>(null);
 
 export function AppProvider({ children }: { children: React.ReactNode }) {

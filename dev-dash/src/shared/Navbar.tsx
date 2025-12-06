@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from "react-router-dom";
+import { Briefcase } from 'lucide-react';
 import image from "../assets/images/dianeImage.png";
 import ThemeSwitcher from '../components/ThemeSwitc';
 
@@ -18,8 +19,11 @@ function Navbar() {
       <section className="bg-white dark:bg-gray-800 rounded-full shadow-md relative">
         <div className="flex items-center justify-between px-6 py-4">
           
-          <div className="text-xl font-bold text-purple-600 dark:text-purple-400">
-            FreelancerOS
+          <div className="flex items-center gap-2">
+            <Briefcase className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+            <span className="text-xl font-bold text-purple-600 dark:text-purple-400">
+              FreelancerOS
+            </span>
           </div>
           
           <nav className="hidden md:flex gap-2 absolute left-1/2 transform -translate-x-1/2">

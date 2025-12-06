@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { Users, FolderKanban, Activity, CheckCircle } from "lucide-react";
 import { AppContext } from "../context/AppContext";
 import DashboardStats from "../components/DashboardStats";
 
@@ -34,10 +35,10 @@ function OverView() {
           <div className="lg:col-span-2 space-y-6">
             
             <div className="grid grid-cols-2 gap-4">
-              <DashboardStats title="Total Clients" value={totalClients} bgColor="bg-blue-600" link="/client" />
-              <DashboardStats title="Total Projects" value={totalProjects} bgColor="bg-purple-600" link="/project" />
-              <DashboardStats title="Active Projects" value={activeProjects} bgColor="bg-indigo-600" />
-              <DashboardStats title="Paid Projects" value={paidProjects} bgColor="bg-green-600" />
+              <DashboardStats title="Total Clients" value={totalClients} bgColor="bg-gradient-to-br from-gray-600 to-purple-600" link="/client" icon={Users} />
+              <DashboardStats title="Total Projects" value={totalProjects} bgColor="bg-gradient-to-br from-purple-600 to-gray-600" link="/project" icon={FolderKanban} />
+              <DashboardStats title="Active Projects" value={activeProjects} bgColor="bg-gradient-to-br from-gray-700 to-purple-700" icon={Activity} />
+              <DashboardStats title="Paid Projects" value={paidProjects} bgColor="bg-gradient-to-br from-purple-700 to-gray-700" icon={CheckCircle} />
             </div>
 
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">

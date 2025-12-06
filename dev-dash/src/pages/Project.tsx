@@ -83,7 +83,7 @@ export default function ProjectsPage() {
         
         <div className="mb-8">
           <div className="flex items-center justify-between mb-2">
-            <h1 className="text-3xl font-bold text-purple-600 dark:text-purple-200">
+            <h1 className="text-3xl font-bold text-black dark:text-white">
               Projects
             </h1>
             <button
