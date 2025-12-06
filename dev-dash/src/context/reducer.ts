@@ -21,7 +21,7 @@ export function appReducer(state: AppState, action: Action): AppState {
 
       // Update project paymentStatus
       const updatedProjects = state.projects.map((p) =>
-        p.id === projectId ? { ...p, paymentStatus: "paid" } : p
+        p.id === projectId ? { ...p, paymentStatus: "paid" as const } : p
       );
 
       // Create a payment record using project's budget as amount (real world you'd ask)
@@ -50,7 +50,7 @@ export function appReducer(state: AppState, action: Action): AppState {
         const p = state.projects[projectIndex];
         const updated = { ...p };
         // If amount >= budget, mark paid
-        if (action.payload.amount >= p.budget) updated.paymentStatus = "paid";
+        if (action.payload.amount >= p.budget) updated.paymentStatus = "paid" as const;
         projects = [
           ...state.projects.slice(0, projectIndex),
           updated,

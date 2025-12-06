@@ -2,7 +2,7 @@ import { useContext, useMemo, useState } from "react";
 import { AppContext } from "../context/AppContext";
 import ProjectList from "../components/ProjectList";
 import CreateProjectModal from "../components/CreateProjectModal";
-import type { Project } from "../types/project";
+
 
 export default function ProjectsPage() {
   const context = useContext(AppContext);

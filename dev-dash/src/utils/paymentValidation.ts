@@ -17,6 +17,7 @@ export const recordNewPaymentWithValidation = (
   }
 
   return {
+    id: `pay_${Date.now()}`,
     projectId: projectId.trim(),
     amount,
     date: date || new Date().toISOString()
