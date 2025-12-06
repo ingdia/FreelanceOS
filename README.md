@@ -1,59 +1,92 @@
-# Freelance Dashboard (React + TypeScript)
+#  FreelancerOS - Freelance Management Dashboard
 
-A type-safe freelance management dashboard built with React and TypeScript that allows users to view and manage clients, projects, and payment information.
+<div align="center">
+  <img src="https://img.shields.io/badge/React-19.1.1-61DAFB?style=for-the-badge&logo=react&logoColor=white" />
+  <img src="https://img.shields.io/badge/TypeScript-5.9.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-4.1.16-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vite-7.1.7-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
+</div>
 
-##  Technologies Used
+<br />
 
-- **React 19** - Modern React with hooks
-- **TypeScript** - Full type safety and better developer experience  
-- **Context API + useReducer** - Global state management
-- **Tailwind CSS** - Utility-first CSS framework
-- **Vite** - Fast build tool and development server
-- **React Router** - Client-side routing
+> A modern, type-safe freelance management dashboard built with React and TypeScript. Manage clients, projects, and payments with full type safety and an intuitive interface.
 
-##  Main Features
+##  Key Features
 
-- **Type-safe React components** with fully typed props and state
-- **Context API + useReducer** system with discriminated union actions
-- **Client, Project, and Payment data models** with TypeScript interfaces
-- **Interactive dashboard** with ability to mark projects as paid
-- **Real-time statistics** showing paid/unpaid project counts
-- **Responsive design** with Tailwind CSS
-- **Type narrowing** for safe data access and error handling
+###  Core Functionality
+-  **Client Management** - Track client information with optional email fields
+-  **Project Tracking** - Monitor project status, budgets, and payment states
+-  **Payment Records** - View and manage payment history with ISO date formatting
+-  **Mark as Paid** - Interactive button to update project payment status
+-  **Real-time Statistics** - Dashboard with paid/unpaid project counts
 
-##  Project Structure
+###  TypeScript Excellence
+-  **Discriminated Union Actions** - Type-safe reducer actions
+-  **Optional Properties** - Proper handling of nullable fields
+-  **Type Narrowing** - Safe data access without runtime errors
+-  **Interface Definitions** - Complete type coverage for all data models
+-  **Generic Components** - Reusable, type-safe React components
+
+###  Modern UI/UX
+-  **Dark Mode Support** - Seamless theme switching with no flash
+-  **Responsive Design** - Mobile-first approach with Tailwind CSS
+-  **Gradient Cards** - Beautiful gray-purple gradient statistics
+-  **Lucide Icons** - Modern, consistent iconography
+-  **Smooth Animations** - Hover effects and transitions
+
+##  Project Architecture
 
 ```
-src/
-├── components/          # Reusable React components
-│   ├── ClientCard.tsx   # Displays client information
-│   ├── ProjectList.tsx  # Lists projects with status
-│   └── DashboardStats.tsx # Summary statistics
-├── context/             # State management
-│   ├── AppContext.tsx   # Context provider
-│   └── reducer.ts       # Reducer with discriminated unions
-├── types/               # TypeScript interfaces
-│   ├── client.ts        # Client data model
-│   ├── project.ts       # Project data model
-│   ├── payment.ts       # Payment data model
-│   └── appState.ts      # Application state
-├── utils/               # Utility functions
-│   ├── countPayments.ts # Count paid/unpaid projects
-│   ├── filterProjects.ts # Filter projects by status
-│   ├── searchClients.ts # Search and find clients
-│   └── paymentValidation.ts # Payment validation
-├── data/                # Mock data
-│   ├── client.ts        # Sample clients
-│   ├── projects.ts      # Sample projects
-│   └── payments.ts      # Sample payments
-└── pages/               # Page components
-    ├── OverView.tsx     # Main dashboard page
-    ├── Client.tsx       # Client list page
-    ├── Project.tsx      # Project list page
-    └── Payment.tsx      # Payment management page
+dev-dash/
+├── src/
+│   ├── assets/              # Static assets
+│   │   └── images/          # Image files
+│   ├── components/          # Reusable UI components
+│   │   ├── ClientCard.tsx           # Client information display
+│   │   ├── CreateProjectModal.tsx   # Project creation modal
+│   │   ├── DashboardStats.tsx       # Statistics cards with icons
+│   │   ├── PaymentList.tsx          # Payment records list
+│   │   ├── ProjectList.tsx          # Project list with actions
+│   │   └── ThemeSwitc.tsx           # Dark/light mode toggle
+│   ├── context/             # Global state management
+│   │   ├── AppContext.tsx           # App state provider
+│   │   ├── reducer.ts               # Type-safe reducer with actions
+│   │   └── ThemeContext.tsx         # Theme state provider
+│   ├── data/                # Mock data for development
+│   │   ├── client.ts                # Sample client data
+│   │   ├── projects.ts              # Sample project data
+│   │   └── payments.ts              # Sample payment data
+│   ├── pages/               # Route-level components
+│   │   ├── Client.tsx               # Client list page
+│   │   ├── OverView.tsx             # Dashboard home page
+│   │   ├── Payment.tsx              # Payment management page
+│   │   └── Project.tsx              # Project management page
+│   ├── shared/              # Shared layout components
+│   │   ├── Footer.tsx               # App footer with branding
+│   │   ├── Navbar.tsx               # Sticky navigation bar
+│   │   └── Sidebar.tsx              # Sidebar (placeholder)
+│   ├── types/               # TypeScript type definitions
+│   │   ├── appState.ts              # Global app state interface
+│   │   ├── client.ts                # Client type definition
+│   │   ├── payment.ts               # Payment type definition
+│   │   └── project.ts               # Project type definition
+│   ├── utils/               # Utility functions (all typed)
+│   │   ├── countPayments.ts         # Count paid vs unpaid
+│   │   ├── filterProjects.ts        # Filter by status/payment
+│   │   ├── getClientById.ts         # Safe client lookup
+│   │   ├── paymentValidation.ts     # Payment validation logic
+│   │   └── searchClients.ts         # Search functionality
+│   ├── App.tsx              # Root component with routing
+│   ├── main.tsx             # Application entry point
+│   └── index.css            # Global styles
+├── index.html               # HTML template with dark mode script
+├── package.json             # Dependencies and scripts
+├── tailwind.config.js       # Tailwind CSS configuration
+├── tsconfig.json            # TypeScript configuration
+└── vite.config.ts           # Vite build configuration
 ```
 
-##  Setup Instructions
+##  Getting Started
 
 ### Prerequisites
 - Node.js (v18 or higher)
@@ -87,7 +120,7 @@ npm run preview
 ```
 
 
-##  Dashboard Sections
+## 📊 Dashboard Sections
 
 ### Client List
 - Display client name, country, and optional email
@@ -111,6 +144,8 @@ npm run preview
 
 ##  Utility Functions
 
+All utility functions are fully typed with TypeScript:
+
 - **countPaidVsUnpaidProjects()** - Provides insight into payment status
 - **findClientByIdSafely()** - Safe client lookup with type narrowing  
 - **filterProjectsByStatus()** - Filter projects by completion status
@@ -120,7 +155,49 @@ npm run preview
 - **recordNewPaymentWithValidation()** - Payment validation utility
 - **Conditional styling** - Visual status indicators
 
+##  Technologies Used
+
+| Technology | Purpose |
+|------------|----------|
+| **React 19** | Modern UI library with hooks |
+| **TypeScript 5.9** | Type safety and better DX |
+| **Tailwind CSS 4** | Utility-first styling |
+| **Vite 7** | Lightning-fast build tool |
+| **React Router** | Client-side routing |
+| **Lucide React** | Beautiful icon library |
+| **Context API + useReducer** | Global state management |
+
+##  Screenshots
+
+### Light Mode
+
+#### Dashboard Overview
+![Dashboard Overview - Light Mode](./screenshots/overview-light.png)
+*Main dashboard showing statistics, recent projects, and quick actions*
+
+#### Projects Page
+![Projects Page - Light Mode](./screenshots/projects-light.png)
+*Project management with filtering, sorting, and mark-as-paid functionality*
+
+#### Clients Page
+![Clients Page - Light Mode](./screenshots/clients-light.png)
+*Client list with contact information and optional email handling*
+
+#### Payments Page
+![Payments Page - Light Mode](./screenshots/payments-light.png)
+*Payment records with project details and transaction history*
+
+### Dark Mode
+
+#### Dashboard Overview - Dark Mode
+![Dashboard Overview - Dark Mode](./screenshots/overview-dark.png)
+*Dashboard with seamless dark mode support*
+
+#### Projects Page - Dark Mode
+![Projects Page - Dark Mode](./screenshots/projects-dark.png)
+*Project management in dark mode with enhanced visibility*
+
 ##  Live Demo
 
-[View Live Demo](https://your-deployment-url.vercel.app)
+[View Live Demo](https://freelance-os-mocha.vercel.app/)
 

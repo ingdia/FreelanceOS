@@ -41,7 +41,7 @@ function OverView() {
               <DashboardStats title="Paid Projects" value={paidProjects} bgColor="bg-gradient-to-br from-purple-700 to-gray-700" icon={CheckCircle} />
             </div>
 
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-2xl border border-gray-200 dark:border-gray-700 p-6">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-2">
                   <div className="w-1 h-8 bg-purple-600 rounded"></div>
