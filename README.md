@@ -172,17 +172,17 @@ All utility functions are fully typed with TypeScript:
 ### Light Mode
 
 #### Dashboard Overview
-![Dashboard Overview - Light Mode](<img width="1366" height="1011" alt="screencapture-freelance-os-mocha-vercel-app-2025-12-06-12_13_05" src="https://github.com/user-attachments/assets/0fa9236d-d6d3-42d6-bce3-e76482e35d79" />)
+<img width="1366" height="1011" alt="screencapture-freelance-os-mocha-vercel-app-2025-12-06-12_13_05" src="https://github.com/user-attachments/assets/0fa9236d-d6d3-42d6-bce3-e76482e35d79" />)
 
 *Main dashboard showing statistics, recent projects, and quick actions*
 
 #### Projects Page
-![Projects Page - Light Mode]<img width="1366" height="948" alt="screencapture-freelance-os-mocha-vercel-app-project-2025-12-06-12_13_33" src="https://github.com/user-attachments/assets/a98ebdfb-8fe0-4ebb-a35b-89827a3847ab" />
+<img width="1366" height="948" alt="screencapture-freelance-os-mocha-vercel-app-project-2025-12-06-12_13_33" src="https://github.com/user-attachments/assets/a98ebdfb-8fe0-4ebb-a35b-89827a3847ab" />
 
 *Project management with filtering, sorting, and mark-as-paid functionality*
 
 #### Clients Page
-![Clients Page - Light Mode]<img width="1366" height="806" alt="screencapture-freelance-os-mocha-vercel-app-client-2025-12-06-12_13_45" src="https://github.com/user-attachments/assets/bfb5c7d1-8b87-456a-a9f4-7e3159403082" />
+<img width="1366" height="806" alt="screencapture-freelance-os-mocha-vercel-app-client-2025-12-06-12_13_45" src="https://github.com/user-attachments/assets/bfb5c7d1-8b87-456a-a9f4-7e3159403082" />
 
 *Client list with contact information and optional email handling*
 
@@ -193,12 +193,13 @@ All utility functions are fully typed with TypeScript:
 ### Dark Mode
 
 #### Dashboard Overview - Dark Mode
-![Dashboard Overview - Dark Mode]<img width="1366" height="1011" alt="screencapture-freelance-os-mocha-vercel-app-2025-12-06-12_14_32" src="https://github.com/user-attachments/assets/1eadd92b-ee6f-480c-9f6f-d2c9e797ee17" />
+<img width="1366" height="1011" alt="screencapture-freelance-os-mocha-vercel-app-2025-12-06-12_14_32" src="https://github.com/user-attachments/assets/1eadd92b-ee6f-480c-9f6f-d2c9e797ee17" />
 
 *Dashboard with seamless dark mode support*
 
 #### Projects Page - Dark Mode
-![Projects Page - Dark Mode]
+<img width="1366" height="948" alt="screencapture-freelance-os-mocha-vercel-app-project-2025-12-06-12_14_57" src="https://github.com/user-attachments/assets/578c7c2a-576c-41d1-a489-58092b608df8" />
+
 *Project management in dark mode with enhanced visibility*
 
 ##  Live Demo
