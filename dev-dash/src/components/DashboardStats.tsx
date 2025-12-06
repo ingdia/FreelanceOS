@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 interface DashboardStatsProps {
   title: string;
   value: number;
-  bgColor?: string;       // e.g., "bg-purple-600"
-  textColor?: string;     // e.g., "text-white"
-  link?: string;          // optional navigation link
+  bgColor?: string;
+  textColor?: string;
+  link?: string;
 }
 
 const DashboardStats: React.FC<DashboardStatsProps> = ({
@@ -25,10 +25,12 @@ const DashboardStats: React.FC<DashboardStatsProps> = ({
   return (
     <div
       onClick={handleClick}
-      className={`p-6 rounded-2xl shadow-md cursor-pointer transform hover:-translate-y-1 hover:shadow-xl transition-all duration-300 ${bgColor} ${textColor}`}
+      className={`${bgColor} ${textColor} rounded-lg shadow-sm p-6 ${
+        link ? "cursor-pointer hover:shadow-lg" : ""
+      } transition-shadow`}
     >
-      <h3 className="text-lg font-semibold mb-2">{title}</h3>
-      <p className="text-3xl font-bold">{value}</p>
+      <h3 className="text-sm font-medium opacity-90 mb-2">{title}</h3>
+      <p className="text-4xl font-bold">{value}</p>
     </div>
   );
 };

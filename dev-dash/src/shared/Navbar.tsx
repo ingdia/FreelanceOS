@@ -14,7 +14,7 @@ function Navbar() {
   ];
 
   return (
-    <div className="px-4 sm:px-8 bg-gray-50 dark:bg-gray-900 py-4 relative">
+    <div className="sticky top-0 z-50 px-4 sm:px-8 bg-gray-50 dark:bg-gray-900 py-4">
       <section className="bg-white dark:bg-gray-800 rounded-full shadow-md relative">
         <div className="flex items-center justify-between px-6 py-4">
           
