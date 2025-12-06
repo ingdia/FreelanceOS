@@ -1,28 +1,29 @@
 import React, { createContext, useReducer } from "react";
-import type { ReactNode, Dispatch } from "react";
-
-import { reducer } from "./reducer";
-import type { Action } from "./reducer";
-
+import { appReducer } from "./reducer";
 import type { AppState } from "../types/appState";
-import { clients as demoClients } from "../data/client";
-import { projects as demoProjects } from "../data/projects";
-import { payments as demoPayments } from "../data/payments";
 
-interface AppContextProps {
-  state: AppState;
-  dispatch: Dispatch<Action>;
-}
+import { clients } from "../data/client";
+import { projects } from "../data/projects";
+import { payments } from "../data/payments";
+
+const initialState: AppState = {
+  clients,
+  projects,
+  payments,
+};
 
 // eslint-disable-next-line react-refresh/only-export-components
-export const AppContext = createContext<AppContextProps | undefined>(undefined);
+export const AppContext = createContext<{
+  state: AppState;
+  dispatch: React.Dispatch<any>;
+} | null>(null);
 
-export const AppProvider = ({ children }: { children: ReactNode }) => {
-  const [state, dispatch] = useReducer(reducer, {
-    clients: demoClients,
-    projects: demoProjects,
-    payments: demoPayments
-  });
+export function AppProvider({ children }: { children: React.ReactNode }) {
+  const [state, dispatch] = useReducer(appReducer, initialState);
 
-  return <AppContext.Provider value={{ state, dispatch }}>{children}</AppContext.Provider>;
-};
+  return (
+    <AppContext.Provider value={{ state, dispatch }}>
+      {children}
+    </AppContext.Provider>
+  );
+}

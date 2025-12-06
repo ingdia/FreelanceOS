@@ -8,6 +8,7 @@ import OverView from "./pages/OverView.js";
 import ClientsPage from "./pages/Client.js";
 import ProjectsPage from "./pages/Project.js";
 import PaymentsPage from "./pages/Payment.js";
+import Footer from "./shared/Footer.js";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
             <Route path="/project" element={<ProjectsPage />} />
             <Route path="/payment" element={<PaymentsPage/>} />
           </Routes>
-
+          <Footer/>
         </BrowserRouter>
       </ThemeProvider>
     </AppProvider>

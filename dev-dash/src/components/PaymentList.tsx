@@ -5,7 +5,6 @@ import { AppContext } from "../context/AppContext";
 interface Props {
   payments: Payment[];
 }
-
 export default function PaymentList({ payments }: Props) {
   const context = useContext(AppContext);
   if (!context) return null;
